@@ -1,0 +1,312 @@
+{
+  "intents": [
+    {
+      "intent": "fighting_robot",
+      "examples": [
+        {
+          "text": "how can I take advantage of the robot"
+        },
+        {
+          "text": "what are the benefits of the robot"
+        },
+        {
+          "text": "what is a fighting robot"
+        },
+        {
+          "text": "what is the definition of a fighting robot"
+        },
+        {
+          "text": "what is the job of a robot"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "how_to_use",
+      "examples": [
+        {
+          "text": "how can I use the control panel to control the robot"
+        },
+        {
+          "text": "how do I move the robot"
+        },
+        {
+          "text": "how do I use the control panel"
+        },
+        {
+          "text": "how to use"
+        },
+        {
+          "text": "I want to know how to use"
+        },
+        {
+          "text": "what are the steps to use"
+        },
+        {
+          "text": "what is the way to use"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "page_title",
+      "examples": [
+        {
+          "text": "page title"
+        },
+        {
+          "text": "what am I watching now"
+        },
+        {
+          "text": "what is in front of me"
+        },
+        {
+          "text": "what is that"
+        },
+        {
+          "text": "what is this page"
+        },
+        {
+          "text": "why use the control panel"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "risks_of_use",
+      "examples": [
+        {
+          "text": "how can I protect the robot from damage"
+        },
+        {
+          "text": "how can I stay away from risks"
+        },
+        {
+          "text": "I want to know the risks of use"
+        },
+        {
+          "text": "risks of use"
+        },
+        {
+          "text": "what are the risks of use"
+        },
+        {
+          "text": "what are the things that should be avoided while using the control panel"
+        },
+        {
+          "text": "what should I stay away from"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "technical_problems",
+      "examples": [
+        {
+          "text": "control panel not working"
+        },
+        {
+          "text": "I am having a technical problem"
+        },
+        {
+          "text": "I have a problem"
+        },
+        {
+          "text": "i have a problem with control panel"
+        },
+        {
+          "text": "i have a problem with moving the robot"
+        },
+        {
+          "text": "I want more help"
+        },
+        {
+          "text": "I want to contact the technical support center"
+        },
+        {
+          "text": "technical support"
+        },
+        {
+          "text": "technical support center"
+        },
+        {
+          "text": "the robot does not work will"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "page title",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "this is a control panel through which you can control the directions of the fighting robot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#page_title",
+      "dialog_node": "node_2_1625543786813",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "standard",
+      "title": "technical problems",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry, I can't help you. You can contact with the technical support center: 920#####. Thank you"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#technical_problems",
+      "dialog_node": "node_2_1625544454051",
+      "previous_sibling": "node_7_1625542332462"
+    },
+    {
+      "type": "standard",
+      "title": "how to use",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Very easy, press the button you want the robot to go to, and when you want the robot to stop, press the stop button"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#how_to_use",
+      "dialog_node": "node_3_1625538804489",
+      "previous_sibling": "node_8_1625543212936"
+    },
+    {
+      "type": "standard",
+      "title": "risks of use",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The control device must be placed out of the reach of children, not to tamper with the settings of the control panel, and not to move the robot in wrong directions that lead to damage to the robot"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#risks_of_use",
+      "dialog_node": "node_7_1625542332462",
+      "previous_sibling": "node_3_1625538804489"
+    },
+    {
+      "type": "standard",
+      "title": "fighting robot",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "A fighting robot is a robot through which you can fight with other robots, enter competitions for fighting robots, and enjoy your time."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#fighting_robot",
+      "dialog_node": "node_8_1625543212936",
+      "previous_sibling": "node_2_1625543786813"
+    },
+    {
+      "type": "standard",
+      "title": "anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I don't understand, you can try to paraphrase"
+              },
+              {
+                "text": "Can you paraphrase your statement? I do not understand"
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_2_1625544454051",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "hello",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "hello , I am your fighting robot assistant, how can I help you"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "speak",
+  "language": "ar",
+  "description": ""
+}
